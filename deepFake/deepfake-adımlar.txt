@@ -1,0 +1,20 @@
+Colab'ı aç
+
+Colab da gpu yu aktifleştir.
+
+!nvidia-smi
+
+!git clone https://github.com/based9based/roop
+
+cd /content/roop/
+
+!pip install -r requirements.txt
+
+aşağıdaki linke git:
+https://civitai.com/api/download/models/85159
+dosya indirilince dosya adını şu şekilde değiştir:
+inswapper_128.onnx
+
+!python run.py --target /content/data/ShaunEliVideo.mp4 --source /content/data/cemYilmaz.jpg -o /content/data/swapped.mp4 --execution-provider cuda --frame-processor face_swapper face_enhancer
+
+işlem tamamlanınca colab dosyalarında data klasörü içinde oluşturulan swapped.mp4 isimli videoyu bilgisayara indir (üç noktaya tıklayarak indir i seç)
